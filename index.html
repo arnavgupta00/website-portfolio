@@ -289,8 +289,8 @@
     @supports (display: grid) {
         @media (max-width: 760px) and (min-width:400px) {
 
-            .bg_s {
-                visibility: hidden;
+            .bg_s{
+                width: 0px;
             }
 
             .text-1 {
@@ -336,14 +336,13 @@
         }
 
         @media (max-width: 400px) {
-            .dlogo {
+            
+            .dlogo{
                 visibility: hidden;
-
             }
-            .bg_s {
-                visibility: collapse;
+            .bg_s{
+                width: 0px;
             }
-
             .text-1 {
                 font-family: 'Satisfy', cursive;
                 font-size: 2rem;
