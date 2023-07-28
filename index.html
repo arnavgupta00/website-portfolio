@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arnav Gupta</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Poppins:wght@700&family=Satisfy&family=Tektur:wght@800&display=swap"
+        rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/kute.js@2.2.4/dist/kute.min.js"></script>
+</head>
+
+<style>
+    :root {
+        --page_2_bg: #1e1e1e;
+        --page_1_bg: rgb(0, 147, 155);
+        --text_color: #393E46;
+    }
+
+    .face {
+        mix-blend-mode: color-burn;
+        grid-area: -12/-10/-1/-1;
+        top: 0%;
+        z-index: 5;
+        height: 75vh;
+        width: 50vw;
+        object-fit: contain;
+
+    }
+
+    .bg_s {
+        position: absolute;
+        top: 0%;
+        z-index: -1;
+    }
+
+    html {
+        background-color: var(--page_1_bg);
+    }
+
+    .button {
+        font-size: 15px;
+        border-radius: 15px;
+        margin: 0%;
+        background-color: transparent;
+        border-color: transparent;
+        font-family: 'Tektur', cursive;
+        z-index: 10;
+    }
+
+    .clicked {
+        opacity: 0.5;
+    }
+
+    .text_color {
+        color: var(--text_color);
+    }
+
+    .page-2 {
+        grid-area: 18/1/30/-1;
+        background-color: var(--page_2_bg);
+        width: 100vw;
+        height: 750px;
+        margin: 0%;
+        z-index: 3;
+
+
+    }
+
+    .main {
+        display: grid;
+        grid-template-columns: repeat(20, 5%);
+        grid-template-rows: repeat(30, 50px);
+        grid-auto-rows: 50px;
+        transform: translateX(-10px)
+    }
+
+
+
+
+    /*PAGE -1*/
+
+    .proj {
+        grid-area: 12/2;
+        font-size: 15px;
+        margin: 0%;
+        width: 100px;
+
+
+    }
+
+    .github {
+        grid-area: 13/2;
+        font-size: 15px;
+        margin-right: 1 0%;
+        width: 100px;
+    }
+
+    .about-me {
+        grid-area: 7/18/16/-1;
+        margin: 0%;
+        margin-left: 10%;
+        opacity: 0.6;
+        width: 100px;
+    }
+
+    .about-me p {
+        font-family: Verdana;
+        font-weight: bolder;
+        font-size: small;
+    }
+
+    .text-line-1 {
+        grid-area: 2/2/3/9;
+        display: flex;
+    }
+
+    .text-1 {
+        font-family: 'Satisfy', cursive;
+        font-size: 5rem;
+        margin: 0%;
+        animation: text_slide 0.5s ease-in-out;
+    }
+
+    .text-2 {
+        font-family: 'Tektur', cursive;
+        font-size: 2rem;
+        margin-top: 45%;
+        margin-left: 15%;
+        animation: text_slide_2 0.5s ease-in-out;
+
+    }
+
+    .text-3 {
+        font-family: 'Oswald', sans-serif;
+
+        font-size: 7rem;
+        grid-area: 3/2/6/5;
+        margin: 0%;
+        animation: text_down 0.5s ease-in-out;
+    }
+
+    /*bar*/
+    .bar {
+
+        grid-area: 1/1/2/-1;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: flex-start;
+        z-index: 10;
+
+    }
+
+    .bar button {
+        margin-top: 15px;
+        background-color: transparent;
+        flex: 0 1;
+        color: #ffffff;
+        background-color: transparent;
+
+    }
+
+    .ilogo {
+
+        height: 50px;
+
+        margin: 0%;
+        flex: 0 1;
+    }
+
+    .dlogo {
+        margin-top: 15px;
+        height: 30px;
+
+        flex: 0 1;
+
+    }
+
+    .bar-tag {
+        position: absolute;
+        font-size: 25px;
+        margin: 0%;
+        top: 0%;
+        left: 1%;
+        font-family: 'Tektur', cursive;
+        height: 65px;
+    }
+
+    /* /bar */
+
+    /*PAGE -1 OVER*/
+
+    /*CURSOR ANIMATION*/
+
+    .ripple-container {
+        position: relative;
+        width: 100vw;
+        height: 100%;
+        overflow: hidden;
+        z-index: 10;
+        grid-area: 1/1/-1/-1;
+
+    }
+
+    .ripple {
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        background-color: rgb(216, 14, 14);
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+        opacity: 0;
+        pointer-events: none;
+        animation: rippleAnimation 1s linear infinite;
+
+
+    }
+
+    @keyframes rippleAnimation {
+        0% {
+            transform: translate(-50%, -50%) scale(0);
+            opacity: 1;
+        }
+
+        100% {
+            transform: translate(-50%, -50%) scale(1);
+            opacity: 0;
+        }
+    }
+
+    /*CURSOR ANIMATION OVER*/
+
+    /* Text Animations */
+
+    @keyframes text_slide {
+        0% {
+            transform: translateX(-100%);
+        }
+
+        70% {
+            transform: translateX(20%);
+        }
+
+        100% {
+            transform: translateX(0%);
+        }
+    }
+
+    @keyframes text_slide_2 {
+        50% {
+            transform: translateX(0%);
+        }
+
+        70% {
+            transform: translateX(100%);
+        }
+
+        100% {
+            transform: translateX(0%);
+        }
+    }
+
+    @keyframes text_down {
+        0% {
+            transform: translateY(-100%);
+            opacity: 0;
+        }
+
+        70% {
+            transform: translateY(30%);
+            opacity: 0.7;
+        }
+
+        100% {
+            transform: translateY(0%);
+            opacity: 1;
+        }
+    }
+
+    /* Text Animations Over */
+
+
+    /*RESPONSIVENESS*/
+    @supports (display: grid) {
+        @media (max-width: 760px) and (min-width:400px) {
+
+            .bg_s {
+                visibility: hidden;
+            }
+
+            .text-1 {
+                font-family: 'Satisfy', cursive;
+                font-size: 3rem;
+                margin: 0%;
+                margin-top: 25%;
+                animation: text_slide 0.5s ease-in-out;
+            }
+
+            .text-2 {
+                font-family: 'Tektur', cursive;
+                font-size: 1.3rem;
+                margin-top: 65%;
+                margin-left: 15%;
+                animation: text_slide_2 0.5s ease-in-out;
+
+            }
+
+            .text-3 {
+                font-family: 'Oswald', sans-serif;
+
+                font-size: 3.5rem;
+                grid-area: 3/2/6/5;
+                margin: 0%;
+                animation: text_down 0.5s ease-in-out;
+            }
+
+            .about-me {
+                grid-area: 7/17/16/-1;
+                margin: 0%;
+
+                opacity: 0.6;
+                width: 85px;
+            }
+
+            .about-me p {
+                font-family: Verdana;
+                font-weight: bolder;
+                font-size: 11px;
+            }
+
+        }
+
+        @media (max-width: 400px) {
+            .bg_s {
+                visibility: hidden;
+            }
+
+            .text-1 {
+                font-family: 'Satisfy', cursive;
+                font-size: 2rem;
+                margin: 0%;
+                margin-top: 65%;
+                animation: text_slide 0.5s ease-in-out;
+            }
+
+            .text-2 {
+                font-family: 'Tektur', cursive;
+                font-size: 1rem;
+                margin-top: 85%;
+                margin-left: 15%;
+                animation: text_slide_2 0.5s ease-in-out;
+
+            }
+
+            .text-3 {
+                font-family: 'Oswald', sans-serif;
+
+                font-size: 2.5rem;
+                grid-area: 3/2/6/5;
+                margin: 0%;
+                animation: text_down 0.5s ease-in-out;
+            }
+
+            .about-me {
+                grid-area: 7/15/16/-1;
+                margin: 0%;
+
+                opacity: 0.6;
+                width: 85px;
+            }
+
+            .about-me p {
+                font-family: Verdana;
+                font-weight: bolder;
+                font-size: 11px;
+            }
+        }
+    }
+
+
+
+
+
+    /*RESPONSIVENESS OVER*/
+</style>
+
+<body>
+
+
+    <div class="main">
+
+        <img class="face" src="./Logo/IMG.png">
+
+        <div class="ripple-container">
+            <div class="ripple"></div>
+        </div>
+
+        <div class="bar">
+            <img onclick='window.open("https://www.instagram.com/arnav_gupta3035/" ,"blank")' class="dlogo"
+                src="./Logo/dlogo.png">
+
+            <img onclick='window.open("https://www.instagram.com/arnav_gupta3035/" ,"blank")' class="ilogo"
+                src="./Logo/insta_logo.png">
+            <button class="button bar" onclick="scrollToY(1700)">contact</button>
+
+
+
+        </div>
+
+        <img class="bar-tag" src="./Logo/LOGO.png" alt="Arnav Gupta Logo">
+        <div class="text-line-1">
+            <div class="text-1-div">
+                <h1 class="text-1 text_color">I'm </h1>
+            </div>
+            <div class="text-2-div">
+                <h2 class="text-2 text_color">ARNAV</h2>
+            </div>
+        </div>
+
+
+        <h1 class="text-3 text_color">PROGRAMMER.</h1>
+
+        <div class="about-me text_color">
+            <h3>About me</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc eu mauris rhoncus, suscipit mi non,
+                efficitur neque. Integer sit amet nisl sem. Vivamus ultricies accumsan rhoncus. Aenean hendrerit odio
+                sed tincidunt molestie. Duis id ipsum dictum, </p>
+        </div>
+        <button class="button proj text_color">Projects -></button>
+
+        <button class="button github text_color"
+            onclick='window.open("https://github.com/arnavgupta00" ,"blank") '>Github -></button>
+
+        <svg id="steps" viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
+            <path
+                d="M0 365L160 365L160 256L320 256L320 336L480 336L480 250L640 250L640 240L800 240L800 312L960 312L960 373L1120 373L1120 241L1280 241L1280 240L1440 240L1440 328L1600 328L1600 350L1760 350L1760 366L1920 366L1920 358L1920 0L1920 0L1760 0L1760 0L1600 0L1600 0L1440 0L1440 0L1280 0L1280 0L1120 0L1120 0L960 0L960 0L800 0L800 0L640 0L640 0L480 0L480 0L320 0L320 0L160 0L160 0L0 0Z">
+            </path>
+
+            <path style="visibility: hidden;"
+                d="M0 29L160 29L160 138L320 138L320 136L480 136L480 75L640 75L640 128L800 128L800 79L960 79L960 125L1120 125L1120 71L1280 71L1280 66L1440 66L1440 96L1600 96L1600 69L1760 69L1760 89L1920 89L1920 49L1920 0L1920 0L1760 0L1760 0L1600 0L1600 0L1440 0L1440 0L1280 0L1280 0L1120 0L1120 0L960 0L960 0L800 0L800 0L640 0L640 0L480 0L480 0L320 0L320 0L160 0L160 0L0 0Z">
+            </path>
+        </svg>
+
+
+        <svg id="blobA" viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
+            <g transform="translate(600.4785749529194 600.151394866677)">
+                <path id="path1"
+                    d="M155.2 -221.1C204.2 -178 249 -136.7 298.9 -75.4C348.7 -14 403.6 67.5 404.4 152C405.3 236.6 352.3 324.2 275.9 378.9C199.5 433.5 99.7 455.3 23.4 423C-52.9 390.8 -105.8 304.6 -191.4 252.9C-277 201.3 -395.3 184.1 -429.7 127.9C-464.1 71.7 -414.7 -23.5 -381.4 -123.3C-348.1 -223.1 -331 -327.6 -270.1 -366.8C-209.3 -406 -104.6 -380 -25.8 -344.5C53.1 -309.1 106.2 -264.2 155.2 -221.1">
+                </path>
+                <path id="path2" style="visibility: hidden;"
+                    d="M85.9 -113.6C114 -78.8 141.2 -54.3 149.1 -24.1C157 6 145.6 41.8 132.9 89C120.3 136.2 106.3 195 75.7 204.6C45.1 214.2 -2.1 174.8 -50.6 151.7C-99.2 128.5 -149.2 121.8 -170.4 94C-191.6 66.3 -183.9 17.6 -173.4 -28.6C-162.9 -74.9 -149.6 -118.6 -120.2 -153.1C-90.8 -187.6 -45.4 -212.8 -8.2 -203C28.9 -193.1 57.9 -148.3 85.9 -113.6">
+                </path>
+            </g>
+        </svg>
+        <div class="page-2"></div>
+        <script type="module" src="https://unpkg.com/@splinetool/viewer@0.9.402/build/spline-viewer.js"></script>
+        <spline-viewer class="bg_s" loading-anim
+            url="https://prod.spline.design/IwrLW8MLTkNqTOOa/scene.splinecode"></spline-viewer>
+
+        <script src="https://unpkg.com/monaco-editor@latest/min/vs/loader.js"></script>
+
+        <script>
+            window.onload = function () {
+                scrollToY(0, 0);
+            };
+            //RIPPLE START
+            const rippleContainer = document.querySelector('.ripple-container');
+
+            rippleContainer.addEventListener('mousemove', function (event) {
+                const scrollX = window.scrollX || window.pageXOffset;
+                const scrollY = window.scrollY || window.pageYOffset;
+                const ripple = document.createElement('div');
+                ripple.className = 'ripple';
+                ripple.style.left = `${event.clientX + scrollX}px`;
+                ripple.style.top = `${event.clientY + scrollY}px`;
+                rippleContainer.appendChild(ripple);
+                setTimeout(function () {
+                    ripple.remove();
+                }, 1000);
+            });
+
+            rippleContainer.addEventListener('click', function (event) {
+
+                if (event.target.tagName.toLowerCase() !== 'button') {
+                    changeColor();
+                }
+
+
+                const scrollX = window.scrollX || window.pageXOffset;
+                const scrollY = window.scrollY || window.pageYOffset;
+                const centerX = event.clientX + scrollX;
+                const centerY = event.clientY + scrollY;
+                const radius = 70;
+                const numParticles = 100;
+                const angleIncrement = (2 * Math.PI) / numParticles;
+
+                for (let i = 0; i < numParticles; i++) {
+                    const angle = i * angleIncrement;
+                    const distanceFromCenter = Math.random() * radius;
+                    const x = centerX + Math.cos(angle) * distanceFromCenter;
+                    const y = centerY + Math.sin(angle) * distanceFromCenter;
+
+                    const particle = document.createElement('div');
+                    particle.className = 'ripple';
+                    particle.style.left = `${x}px`;
+                    particle.style.top = `${y}px`;
+                    rippleContainer.appendChild(particle);
+
+                    setTimeout(function () {
+                        particle.remove();
+                    }, 1000);
+
+                }
+            });
+
+            //RIPPLE OVER
+
+            //COLORCHANGE START
+            var colorIndex = 0
+            function changeColor() {
+                var list_bg_color = ["rgb(0, 147, 155)", "#52734D", "#648f84", "#421c9b", "#1e1e1e"];
+                var list_text_color = ["#393E46", "#d2d3bb", "#C9F658", "#D7BBF5", "#79a4b3"];
+                const root = document.documentElement;
+
+                colorIndex = (colorIndex + 1) % list_bg_color.length;
+
+                root.style.setProperty('--page_1_bg', list_bg_color[colorIndex]);
+
+                root.style.setProperty('--text_color', list_text_color[colorIndex]);
+            }
+
+            //COLORCHANGE OVER
+
+
+            //IDE
+
+            require.config({ paths: { 'vs': 'https://unpkg.com/monaco-editor@latest/min/vs' } });
+            require(['vs/editor/editor.main'], function () {
+                var editor = monaco.editor.create(document.querySelector('.page-2'), {
+                    value: '\n\n//ABOUT ME \n\n\nclass Arnav_Gupta{\n\n\tSkills() {\n\n\t\tvar PYTHON = ["Selenium web crawler" ,"App Development via Kivy","Desktop Automation Libraries"];\n\t\t\n\n\t\tfunction  WEBSITE_DEVELOPMENT() {\n\t\t\tvar Frontend = ["JAVASCRIPT" ,"HTML" , "CSS" ,"Bootstrap/Tailwind"];\n\t\t\tvar Backend = ["Node.js","Express.js"];\n\t\t\tvar Database = ["MangoDB" ,"Mongoose"];\n\n\t\t\treturn Frontend,Backend,Database;\n\t\t} \n\t\tWEBSITE_DEVELOPMENT();\n\t\treturn PYTHON;\n\t}\n\n\tInformation(){\n\t\tvar Name = "Arnav Gupta";\n\t\tvar Contact = "arnavguptagg@gmail.com";\n\n\t\treturn Name, Contact;\n\t}\n\n}',
+                    language: 'javascript',
+                    theme: 'vs-dark', // Specify the desired theme here
+                    fontSize: 16, // Set the font size
+                    lineNumbers: 'off', // Show line numbers
+                    minimap: {
+                        enabled: false // Disable the minimap
+                    }
+                });
+
+                // You can also further customize the editor by accessing its API
+                editor.updateOptions({
+                    fontFamily: 'Courier New', // Set the font family
+                    wordWrap: 'on' // Disable word wrapping
+                });
+            });
+
+            //IDE OVER
+
+
+            //h1 changing
+            var run_c = true;
+            function myFunction() {
+                window.addEventListener("scroll", function () {
+
+                });
+
+                var list_words = ["PROGRAMMER.", "DESIGNER.", "WEBDEV."];
+                var currentIndex = 0;
+
+                function changeText() {
+                    if (run_c) {
+                        document.querySelector('.text-3').innerHTML = list_words[currentIndex];
+                        currentIndex = (currentIndex + 1) % list_words.length;
+                        setTimeout(changeText, 2000); // Change text every 2 second
+                    }
+                }
+
+                changeText();
+            }
+
+            window.addEventListener("load", function () {
+                myFunction();
+            });
+
+
+
+            //h1 changing over
+
+            //SCROLL START
+            function scrollToY(h, b) {
+                window.scrollTo({
+                    top: h,
+                    left: b,
+                    behavior: 'smooth'
+                });
+            }
+
+            function disableXScroll() {
+                document.documentElement.style.overflowX = 'hidden';
+            }
+
+            disableXScroll();
+
+            //SCROLL OVER
+
+            //BUTTON ANIM START
+
+            function button_animator() {
+                for (let di = 0; di < document.querySelectorAll(".button").length; di++) {
+                    let index = di; // Capture the current value of di in a separate variable
+                    document.querySelectorAll(".button")[index].addEventListener("click", function () {
+                        document.querySelectorAll(".button")[index].classList.add("clicked");
+                        setTimeout(function () {
+                            document.querySelectorAll(".button")[index].classList.remove("clicked");
+                        }, 500);
+                    });
+                }
+            }
+            button_animator();
+
+            //BUTTON ANIM OVER
+        </script>
+
+</body>
+
+</html>
