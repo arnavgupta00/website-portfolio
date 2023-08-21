@@ -379,6 +379,7 @@
 
                 opacity: 0.6;
                 width: 85px;
+                visibility: hidden;
             }
 
             .about-me p {
@@ -549,7 +550,7 @@
             require.config({ paths: { 'vs': 'https://unpkg.com/monaco-editor@latest/min/vs' } });
             require(['vs/editor/editor.main'], function () {
                 var editor = monaco.editor.create(document.querySelector('.page-2'), {
-                    value: '\n\n//ABOUT ME \n\n\nclass Arnav_Gupta{\n\n\tSkills() {\n\n\t\tvar PYTHON = ["Selenium web crawler" ,"App Development via Kivy","Desktop Automation Libraries"];\n\t\t\n\n\t\tfunction  WEBSITE_DEVELOPMENT() {\n\t\t\tvar Frontend = ["JAVASCRIPT" ,"HTML" , "CSS" ,"Bootstrap/Tailwind"];\n\t\t\tvar Backend = ["Node.js","Express.js"];\n\t\t\tvar Database = ["MangoDB" ,"Mongoose"];\n\n\t\t\treturn Frontend,Backend,Database;\n\t\t} \n\t\tWEBSITE_DEVELOPMENT();\n\t\treturn PYTHON;\n\t}\n\n\tInformation(){\n\t\tvar Name = "Arnav Gupta";\n\t\tvar Contact = "arnavguptagg@gmail.com";\n\n\t\treturn Name, Contact;\n\t}\n\n}',
+                    value: '\n\n//ABOUT ME \n\n\nclass Arnav_Gupta{\n\n\tSkills() {\n\n\t\tvar PYTHON = ["Selenium web crawler" ,"App Development via Kivy","Desktop Automation Libraries"];\n\t\t\n\n\t\tfunction  WEB_DEVELOPMENT() {\n\t\t\tvar Frontend = ["JAVASCRIPT" ,"HTML" , "CSS" ,"Bootstrap/Tailwind"];\n\t\t\tvar Backend = ["Node.js","Express.js,"EJS"];\n\t\t\tvar Database = ["SQL","MangoDB" ,"Mongoose"];\n\n\t\t\treturn Frontend,Backend,Database;\n\t\t} \n\t\tWEBSITE_DEVELOPMENT();\n\t\treturn PYTHON;\n\t}\n\n\tInformation(){\n\t\tvar Name = "Arnav Gupta";\n\t\tvar Contact = "arnavguptagg@gmail.com";\n\n\t\treturn Name, Contact;\n\t}\n\n}',
                     language: 'javascript',
                     theme: 'vs-dark', // Specify the desired theme here
                     fontSize: 16, // Set the font size
